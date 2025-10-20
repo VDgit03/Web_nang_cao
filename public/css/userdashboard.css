@@ -1,0 +1,166 @@
+/* === Reset cơ bản === */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f8fafc;
+    color: #1f2937;
+}
+
+/* === Container tổng thể === */
+.main-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* === Sidebar === */
+.sidebar {
+    width: 240px;
+    background-color: #ffffff;
+    padding: 24px 20px;
+    border-right: 1px solid #e5e7eb;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.03);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.menu-group {
+    margin-bottom: 30px;
+}
+
+.menu-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #4b5563;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    margin: 12px 0;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    text-decoration: none;
+    font-weight: 500;
+    color: #374151;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #f3f4f6;
+    color: #6366f1;
+}
+
+.sidebar i.icon {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+/* === Dashboard chính === */
+.dashboard-container {
+    flex: 1;
+    padding: 40px 30px;
+    background-color: #f9fafb;
+}
+
+.dashboard-container h2 {
+    font-size: 26px;
+    font-weight: bold;
+    color: #111827;
+    margin-bottom: 8px;
+}
+
+.dashboard-container p {
+    color: #6b7280;
+    margin-bottom: 24px;
+    font-size: 15px;
+}
+
+/* === Thẻ nội dung === */
+.exam-list .grid > div {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.exam-list .grid > div:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.07);
+}
+
+.exam-list .text-sm {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 8px;
+}
+/* === Dark mode hỗ trợ (tùy chọn mở rộng) === */
+body.dark {
+    background-color: #1f2937;
+    color: #f3f4f6;
+}
+
+body.dark .sidebar {
+    background-color: #111827;
+    border-color: #374151;
+}
+
+body.dark .sidebar a {
+    color: #d1d5db;
+}
+
+body.dark .sidebar a:hover {
+    background-color: #374151;
+    color: #60a5fa;
+}
+
+body.dark .dashboard-container {
+    background-color: #1f2937;
+}
+
+body.dark .exam-list .grid > div {
+    background-color: #374151;
+}
+
+body.dark .dashboard-container h2 {
+    color: #f3f4f6;
+}
+
+body.dark .dashboard-container p {
+    color: #d1d5db;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-right: none;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .dashboard-container {
+        padding: 24px 16px;
+    }
+}
